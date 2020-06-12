@@ -1,0 +1,24 @@
+{
+  "name": "js-algorithms-data-structures",
+  "version": "1.0.0",
+  "description": "My implementation of some of the most used algorithms and data structures in JavaScript",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "mygitrepo"
+  },
+  "keywords": [
+    "algorithms",
+    "javascript",
+    "data",
+    "structures"
+  ],
+  "author": "JLL32",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^7.2.0"
+  }
+}
