@@ -34,4 +34,3 @@ console.log(maxSubArray([-1]));
 console.log(maxSubArray([-1, 0, 0, 0, 0]));
 console.log(maxSubArray([0, 0, 0, 0]));
 console.log(maxSubArray([0, 0, 0, 0, -1]));
-
