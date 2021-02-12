@@ -12,11 +12,12 @@ interface BST<T> {
     root: Option<BNode<T>>;
     insert: (value: T) => BNode<T>;
 }
-export default function <T>(): BST<T> {
+
+export default function <T = void>(): BST<T> {
     return {
         root: null,
 
-        insert(value: T): BNode<T> {
+        insert(value) {
             let newNode = new BNode(value);
 
             if (this.root == null) {
@@ -39,6 +40,6 @@ export default function <T>(): BST<T> {
                     } else tempNode = tempNode.left;
                 }
             }
-        },
+        }
     };
 };
