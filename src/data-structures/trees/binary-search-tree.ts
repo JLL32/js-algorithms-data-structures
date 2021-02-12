@@ -1,13 +1,15 @@
+type Option<T> = T | null;
+
 class BNode<T> {
     constructor(
         public value: T,
-        public left: BNode<T> | null = null,
-        public right: BNode<T> | null = null
+        public left: Option<BNode<T>> = null,
+        public right: Option<BNode<T>> = null
     ) {}
 }
 
-class BinarySearchTree<T> {
-    constructor(public root: BNode<T> | null = null) {}
+export class BinarySearchTree<T> {
+    constructor(public root: Option<BNode<T>> = null) {}
 
     insert(value: T): BNode<T> {
         let newNode = new BNode(value);
@@ -34,11 +36,3 @@ class BinarySearchTree<T> {
         }
     }
 }
-
-let myBT = new BinarySearchTree<number>();
-console.log(myBT.insert(9));
-console.log(myBT.insert(4));
-console.log(myBT.insert(20));
-console.log(myBT.insert(1));
-console.log(myBT.insert(6));
-console.log(JSON.stringify(myBT.root, null, "    "));
