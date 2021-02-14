@@ -1,6 +1,6 @@
 import BST from "./data-structures/trees/binary-search-tree.ts";
 
-const TestBST = function () {
+const testBST = function () {
     const myBT = BST<number>();
     console.log(myBT.insert(9));
     console.log(myBT.insert(4));
