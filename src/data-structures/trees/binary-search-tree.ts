@@ -18,7 +18,7 @@ export default function <T = void>(): BST<T> {
         root: null,
 
         insert(value) {
-            let newNode = new BNode(value);
+            const newNode = new BNode(value);
 
             if (this.root == null) {
                 this.root = newNode;
@@ -42,4 +42,4 @@ export default function <T = void>(): BST<T> {
             }
         }
     };
-};
+}
