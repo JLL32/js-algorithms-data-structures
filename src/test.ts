@@ -11,4 +11,4 @@ const testBST = function () {
 	console.log(typeof myBT.insert);
 };
 
-TestBST();
+testBST();
