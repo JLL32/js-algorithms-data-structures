@@ -5,12 +5,13 @@ class BNode<T> {
         public value: T,
         public left: Option<BNode<T>> = null,
         public right: Option<BNode<T>> = null
-    ) {}
+    ) { }
 }
 
 interface BST<T> {
     root: Option<BNode<T>>;
     insert: (value: T) => BNode<T>;
+    lookup: (value: T) => boolean;
 }
 
 export default function <T = void>(): BST<T> {
@@ -26,7 +27,7 @@ export default function <T = void>(): BST<T> {
             }
 
             let tempNode = this.root;
-            for (;;) {
+            for (; ;) {
                 if (value > tempNode.value) {
                     if (tempNode.right == null) {
                         tempNode.right = newNode;
@@ -40,6 +41,29 @@ export default function <T = void>(): BST<T> {
                     } else tempNode = tempNode.left;
                 }
             }
+        },
+
+        lookup(value) {
+            if (this.root == null)
+                return false;
+            let currentNode = this.root;
+            for (; ;) {
+                if (value > currentNode?.value)
+                    if (currentNode.right != null) {
+                        currentNode = currentNode.right;
+                    } else {
+                        break;
+                    }
+                if (value < currentNode.value)
+                    if (currentNode.left != null) {
+                        currentNode = currentNode.left;
+                    } else {
+                        break;
+                    }
+                if (value == currentNode.value)
+                    return true;
+            }
+            return false;
         }
     };
 }
