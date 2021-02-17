@@ -8,7 +8,10 @@ const testBST = function () {
     console.log(myBT.insert(1));
     console.log(myBT.insert(5));
     console.log(JSON.stringify(myBT.root, null, "  "));
-	console.log(typeof myBT.insert);
+
+	console.log(myBT.lookup(9));
+	console.log(myBT.lookup(7));
+	console.log(myBT.lookup(20));
 };
 
 testBST();
