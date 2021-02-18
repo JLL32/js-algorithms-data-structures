@@ -12,6 +12,7 @@ interface BST<T> {
     root: Option<BNode<T>>;
     insert: (value: T) => BNode<T>;
     lookup: (value: T) => boolean;
+    remove: (value: T) => Option<BNode<T>>;
 }
 
 export default function <T = void>(): BST<T> {
@@ -64,6 +65,14 @@ export default function <T = void>(): BST<T> {
                     return true;
             }
             return false;
+        },
+
+        remove(value) {
+            if (this.root == null)
+                return null;
+            let currentNode = this.root;
+            let parentNode = null;
+            return currentNode;
         }
     };
 }
