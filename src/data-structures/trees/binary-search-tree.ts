@@ -1,18 +1,18 @@
 type Option<T> = T | null;
 
-class BNode<T> {
+class Node<T> {
     constructor(
         public value: T,
-        public left: Option<BNode<T>> = null,
-        public right: Option<BNode<T>> = null
+        public left: Option<Node<T>> = null,
+        public right: Option<Node<T>> = null
     ) { }
 }
 
 interface BST<T> {
-    root: Option<BNode<T>>;
-    insert: (value: T) => BNode<T>;
+    root: Option<Node<T>>;
+    insert: (value: T) => Node<T>;
     lookup: (value: T) => boolean;
-    remove: (value: T) => Option<BNode<T>>;
+    remove: (value: T) => Option<Node<T>>;
 }
 
 export default function <T = void>(): BST<T> {
@@ -20,7 +20,7 @@ export default function <T = void>(): BST<T> {
         root: null,
 
         insert(value) {
-            const newNode = new BNode(value);
+            const newNode = new Node(value);
 
             if (this.root == null) {
                 this.root = newNode;
